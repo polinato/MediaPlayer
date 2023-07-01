@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tpm.mediaplayer.FXMLInterfaceController">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleMenuActionOpen" text="Open" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleButtonActionClose" text="Close" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleButtonActionPlay" text="Play" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleButtonActionStop" text="Stop" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Drag the file to this for playing" />
+                <MediaView fx:id="mv" fitHeight="300.0" fitWidth="600.0">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </MediaView>
+            </children>
+        </StackPane>
+    </center>
+    <bottom>
+        <HBox prefHeight="52.0" prefWidth="600.0" spacing="10.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="bplay" mnemonicParsing="false" onAction="#handleButtonActionPlay" text="&gt;">
+                    <HBox.margin>
+                        <Insets left="5.0" />
+                    </HBox.margin></Button>
+                <Button mnemonicParsing="false" onAction="#handleButtonActionStop" text="[]" />
+                <Label contentDisplay="CENTER" text="Time:">
+                    <HBox.margin>
+                        <Insets top="4.0" />
+                    </HBox.margin></Label>
+                <Slider fx:id="timeslider" prefHeight="14.0" prefWidth="266.0">
+                    <HBox.margin>
+                        <Insets top="5.0" />
+                    </HBox.margin></Slider>
+                <Label fx:id="ltime" text="Duration">
+                    <HBox.margin>
+                        <Insets top="4.0" />
+                    </HBox.margin></Label>
+                <Label layoutX="269.0" layoutY="10.0" text="Vol:">
+                    <HBox.margin>
+                        <Insets top="4.0" />
+                    </HBox.margin></Label>
+                <Slider fx:id="volumeslider" prefHeight="14.0" prefWidth="98.0">
+                    <HBox.margin>
+                        <Insets top="5.0" />
+                    </HBox.margin></Slider>
+            </children>
+            <BorderPane.margin>
+                <Insets />
+            </BorderPane.margin>
+            <padding>
+                <Insets top="10.0" />
+            </padding>
+        </HBox>
+    </bottom>
+</BorderPane>
